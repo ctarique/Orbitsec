@@ -56,3 +56,5 @@ dkms.conf
 
 # Ignore compiled firmware binary
 firmware/orbitsec_decoder
+.DS_Store
+firmware/.DS_Store
