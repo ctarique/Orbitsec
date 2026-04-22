@@ -16,7 +16,7 @@ void handle_errors() {
 int main() {
     printf("[*] OrbitSec Firmware Decoder Initializing...\n");
 
-    FILE *pkt_file = fopen("ciphertext.bin", "rb");
+    FILE *pkt_file = fopen("../data/ciphertext.bin", "rb");
     if (!pkt_file) {
         perror("[-] Fatal: Failed to locate incoming packet (ciphertext.bin)");
         return 1;
@@ -51,7 +51,7 @@ int main() {
     }
 
     // 4. LOAD THE PUBLIC KEY
-    FILE *key_file = fopen("public_key.pem", "r");
+    FILE *key_file = fopen("../data/public_key.pem", "r");
     if (!key_file) {
         perror("[-] Fatal: Failed to load public key");
         return 1;

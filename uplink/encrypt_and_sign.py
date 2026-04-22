@@ -35,17 +35,17 @@ def generate_packet(payload_data):
     packet = struct.pack(fmt, magic, payload_len, sig_len, iv, ciphertext, sig)
 
     # Save outputs for the C firmware to consume
-    with open('ciphertext.bin', 'wb') as f:
+    with open('data/ciphertext.bin', 'wb') as f:
         f.write(packet)
         
-    with open('aes_key.bin', 'wb') as f:
+    with open('data/aes_key.bin', 'wb') as f:
         f.write(aes_key)
         
     pub_key_pem = priv_key.public_key().public_bytes(
         encoding=serialization.Encoding.PEM,
         format=serialization.PublicFormat.SubjectPublicKeyInfo
     )
-    with open('public_key.pem', 'wb') as f:
+    with open('data/public_key.pem', 'wb') as f:
         f.write(pub_key_pem)
 
     print(f"Packet successfully generated: {len(packet)} bytes.")
