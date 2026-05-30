@@ -34,7 +34,7 @@ The Python sender performs the producer-side cryptographic workflow:
 5. Sign the hash using ECDSA P-256
 6. Package the IV, ciphertext, signature, and fixed headers into a binary packet
 
-![Encrypt-then-Sign Python Flow](./docs/Encrypt-then-Sign%20\(Python\).pdf)
+![Encrypt-then-Sign Python Flow](./docs/encrypt_then_sign_python.png)
 
 ### C Firmware Decoder: Verify-then-Decrypt
 
@@ -50,7 +50,7 @@ The C receiver performs the consumer-side gatekeeper workflow:
 8. Decrypt and process validated telemetry data
 9. Free cryptographic contexts and allocated memory
 
-![Verify-then-Decrypt C Flow](./docs/Verify-then-Decrypt%20\(C\).pdf)
+![Verify-then-Decrypt C Flow](./docs/verify_then_decrypt_c.png)
 
 ---
 
@@ -128,7 +128,7 @@ A packet with invalid magic bytes is rejected before signature verification or d
 [-] Fatal: Invalid Magic Bytes. Dropping packet immediately.
 ```
 
-![Bad Magic Spoofing Test](./docs/Bad%20Magic%20\(Spoofing\).png)
+![Bad Magic Spoofing Test](<./docs/Bad Magic (Spoofing).png>)
 
 ### Tampering Test: Bad Signature
 
@@ -141,7 +141,7 @@ A packet with an invalid or corrupted signature is rejected at the ECDSA verific
 [-] Fatal: OpenSSL internal verification error.
 ```
 
-![Bad Signature Tampering Test](./docs/Bad%20Signature%20\(Tampering\).png)
+![Bad Signature Tampering Test](<./docs/Bad Signature (Tampering).png>)
 
 ### Denial-of-Service Test: Oversized Payload
 
@@ -152,7 +152,7 @@ An oversized payload is rejected before unsafe processing.
 [-] Fatal: Packet lengths exceed buffer limits. Dropping to prevent overflow.
 ```
 
-![Oversized Payload DoS Test](./docs/Oversized%20Payload%20\(Denial%20of%20Service\).png)
+![Oversized Payload DoS Test](<./docs/Oversized Payload (Denial of Service).png>)
 
 ---
 
@@ -160,12 +160,12 @@ An oversized payload is rejected before unsafe processing.
 
 Detailed project documentation is available in the `docs/` directory.
 
-* [Final Project Report](./docs/OrbitSec%20Final%20Project%20Report.pdf)
-* [Project Specifications](./docs/OrbitSec%20Project%20Specifications.pdf)
-* [Functional and Security Requirements](./docs/OrbitSec%20Functional%20and%20Security%20Requirements.pdf)
-* [STRIDE Threat Model](./docs/STRIDE%20Threat%20Model.pdf)
-* [Encrypt-then-Sign Python Sequence](./docs/Encrypt-then-Sign%20%28Python%29.pdf)
-* [Verify-then-Decrypt C Flow](./docs/Verify-then-Decrypt%20%28C%29.pdf)
+* [Final Project Report](./docs/OrbitSec Final Project Report.pdf)
+* [Project Specifications](./docs/OrbitSec Project Specifications.pdf)
+* [Functional and Security Requirements](./docs/OrbitSec Functional and Security Requirements.pdf)
+* [STRIDE Threat Model](./docs/STRIDE Threat Model.pdf)
+* [Encrypt-then-Sign Python Sequence PDF](./docs/Encrypt-then-Sign %28Python%29.pdf)
+* [Verify-then-Decrypt C Flow PDF](./docs/Verify-then-Decrypt %28C%29.pdf)
 
 ---
 
